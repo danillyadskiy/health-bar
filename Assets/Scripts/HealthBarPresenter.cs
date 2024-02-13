@@ -5,8 +5,6 @@ public abstract class HealthBarPresenter : MonoBehaviour
 {
     [SerializeField] protected Slider HealthView;
     [SerializeField] protected HealthModel HealthModel;
-
-    protected float TargetHealth => (float)HealthModel.Value / HealthModel.MaxValue;
     
     protected abstract void UpdateHealthView();
 

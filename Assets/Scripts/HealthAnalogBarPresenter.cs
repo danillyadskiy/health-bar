@@ -18,7 +18,7 @@ public class HealthAnalogBarPresenter : HealthBarPresenter
     private IEnumerator Coroutine()
     {
         float current = HealthView.value;
-        float target = TargetHealth;
+        float target = HealthModel.RelativeValue;
         
         while (current != target)
         {

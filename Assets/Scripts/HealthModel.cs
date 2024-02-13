@@ -9,6 +9,8 @@ public class HealthModel : MonoBehaviour
     public int MaxValue => 100;
 
     public int Value { get; private set; } = 100;
+    
+    public float RelativeValue => (float)Value / MaxValue;
 
     public void Increase(int value)
     {

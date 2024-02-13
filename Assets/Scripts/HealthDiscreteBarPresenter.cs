@@ -5,6 +5,6 @@ public class HealthDiscreteBarPresenter : HealthBarPresenter
 {
     protected override void UpdateHealthView()
     {
-        HealthView.value = TargetHealth;
+        HealthView.value = HealthModel.RelativeValue;
     }
 }
