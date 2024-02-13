@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class HealthAnalogBarPresenter : HealthBarPresenter
 {
-    private IEnumerator _coroutine;
+    private Coroutine _coroutine;
     
     protected override void UpdateHealthView()
     {
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = Coroutine();
-        StartCoroutine(_coroutine);
+        _coroutine = StartCoroutine(UpdateHealthViewSmoothly());
     }
 
-    private IEnumerator Coroutine()
+    private IEnumerator UpdateHealthViewSmoothly()
     {
         float current = HealthView.value;
         float target = HealthModel.RelativeValue;
