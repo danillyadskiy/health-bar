@@ -395,8 +395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f7a8eea62b4237a97cbe90a9a8e919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthView: {fileID: 1072083994}
   HealthModel: {fileID: 236870081}
+  HealthView: {fileID: 1072083994}
 --- !u!114 &236870080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,9 +409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39db04d41b14b66af84e8cf43f5ad93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthModel: {fileID: 236870081}
   _currentHealthView: {fileID: 623884329}
   _maxHealthView: {fileID: 2021791780}
-  _healthModel: {fileID: 236870081}
 --- !u!114 &236870081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,8 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22469f0703b47de87103466c1e1ec7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthView: {fileID: 851802822}
   HealthModel: {fileID: 236870081}
+  HealthView: {fileID: 851802822}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

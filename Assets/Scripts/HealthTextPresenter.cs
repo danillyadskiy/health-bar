@@ -1,21 +1,10 @@
 using TMPro;
 using UnityEngine;
 
-public class HealthTextPresenter : MonoBehaviour
+public class HealthTextPresenter : HealthPresenter
 {
     [SerializeField] private TMP_Text _currentHealthView;
     [SerializeField] private TMP_Text _maxHealthView;
-    [SerializeField] private HealthModel _healthModel;
-
-    private void OnEnable()
-    {
-        _healthModel.Changed += UpdateHealthView;
-    }
-    
-    private void OnDisable()
-    {
-        _healthModel.Changed -= UpdateHealthView;
-    }
 
     private void Start()
     {
@@ -23,13 +12,13 @@ public class HealthTextPresenter : MonoBehaviour
         UpdateMaxHealthView();
     }
 
-    private void UpdateHealthView()
+    protected override void UpdateHealthView()
     {
-        _currentHealthView.text = _healthModel.Value.ToString();
+        _currentHealthView.text = HealthModel.Value.ToString();
     }
     
     private void UpdateMaxHealthView()
     {
-        _maxHealthView.text = _healthModel.MaxValue.ToString();
+        _maxHealthView.text = HealthModel.MaxValue.ToString();
     }
 }
