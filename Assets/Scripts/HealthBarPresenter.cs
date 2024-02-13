@@ -1,28 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarPresenter : MonoBehaviour
+public abstract class HealthBarPresenter : MonoBehaviour
 {
-    [SerializeField] private Slider _healthView;
-    [SerializeField] private HealthModel _healthModel;
+    [SerializeField] protected Slider HealthView;
+    [SerializeField] protected HealthModel HealthModel;
+
+    protected float TargetHealth => (float)HealthModel.Value / HealthModel.MaxValue;
+    
+    protected abstract void UpdateHealthView();
 
     private void OnEnable()
     {
-        _healthModel.Changed += UpdateHealthView;
+        HealthModel.Changed += UpdateHealthView;
     }
     
     private void OnDisable()
     {
-        _healthModel.Changed -= UpdateHealthView;
+        HealthModel.Changed -= UpdateHealthView;
     }
 
     private void Start()
     {
         UpdateHealthView();
-    }
-
-    private void UpdateHealthView()
-    {
-        _healthView.value = (float) _healthModel.Value / _healthModel.MaxValue;
     }
 }
